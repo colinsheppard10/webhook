@@ -105,6 +105,7 @@ app.post('/webhook', function (request, response, next) {
     // Pull transactions for the Item for the last 30 days
     console.log(server.address().port);
     console.log('hit webhook');
+    response.json('hit webhook');
 });
 
 var server = app.listen(APP_PORT, function () {
