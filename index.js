@@ -16,9 +16,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.post('/webhook', function (request, response, next) {
-    // Pull transactions for the Item for the last 30 days
-    console.log(server.address().port);
-    console.log('hit webhook');
+    console.log(request.body);
     response.json('hit webhook');
 });
 
