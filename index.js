@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.get('/webhook', function (request, response, next) {
+app.post('/webhook', function (request, response, next) {
     console.log("hit webhook on server");
     response.send("hit webhook");
 });
