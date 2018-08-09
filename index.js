@@ -3,7 +3,6 @@
 var envvar = require('envvar');
 var express = require('express');
 var bodyParser = require('body-parser');
-var axios = require('axios');
 
 var APP_PORT = envvar.number('APP_PORT', 3021);
 
