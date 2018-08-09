@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 app.post('/webhook', function (request, response, next) {
-    console.log("hit webhook on server");
+    console.log(request.body);
     response.send("hit webhook");
 });
 
