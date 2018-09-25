@@ -312,6 +312,9 @@ CREATE TABLE `tbl_offering` (
   `total_amount` bigint(20) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `past_90_days_updated` bit(1) DEFAULT b'0',
+  `past_1_year_updated` bit(1) DEFAULT b'0',
+  `issuance_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -321,7 +324,7 @@ CREATE TABLE `tbl_offering` (
 --
 
 /*!40000 ALTER TABLE `tbl_offering` DISABLE KEYS */;
-INSERT INTO `tbl_offering` VALUES (1,'66726','Test Offering','',1000000,NULL,NULL),(2,'66726','Test Offering 1','',1000000,NULL,NULL),(3,'66726','Test Offering 2','',1000000,NULL,NULL);
+INSERT INTO `tbl_offering` VALUES (1,'66726','Test Offering','',1000000,NULL,NULL,'\0','\0',NULL),(2,'66726','Test Offering 1','',1000000,NULL,NULL,'\0','\0',NULL),(3,'66726','Test Offering 2','',1000000,NULL,NULL,'\0','\0',NULL);
 /*!40000 ALTER TABLE `tbl_offering` ENABLE KEYS */;
 
 --
@@ -614,4 +617,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-25 17:54:57
+-- Dump completed on 2018-09-25 18:14:12
