@@ -247,7 +247,7 @@ CREATE TABLE `tbl_nortcap_trades` (
   `norcap_trade_status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'CREATED',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `is_issued` int(10) unsigned DEFAULT '0',
+  `is_issued` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `tbl_nortcap_trades_user_id_foreign` (`user_id`),
   KEY `tbl_nortcap_trades_offer_id_foreign` (`offer_id`),
@@ -312,9 +312,9 @@ CREATE TABLE `tbl_offering` (
   `total_amount` bigint(20) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `past_90_days_updated` bit(1) DEFAULT b'0',
-  `past_1_year_updated` bit(1) DEFAULT b'0',
   `issuance_date` date DEFAULT NULL,
+  `past_90_days_updated` tinyint(1) DEFAULT '0',
+  `past_1_year_updated` tinyint(1) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -324,7 +324,7 @@ CREATE TABLE `tbl_offering` (
 --
 
 /*!40000 ALTER TABLE `tbl_offering` DISABLE KEYS */;
-INSERT INTO `tbl_offering` VALUES (1,'66726','Test Offering','',1000000,NULL,NULL,'\0','\0',NULL),(2,'66726','Test Offering 1','',1000000,NULL,NULL,'\0','\0',NULL),(3,'66726','Test Offering 2','',1000000,NULL,NULL,'\0','\0',NULL);
+INSERT INTO `tbl_offering` VALUES (1,'66726','Test Offering','',1000000,NULL,NULL,NULL,0,0),(2,'66726','Test Offering 1','',1000000,NULL,NULL,NULL,0,0),(3,'66726','Test Offering 2','',1000000,NULL,NULL,NULL,0,0);
 /*!40000 ALTER TABLE `tbl_offering` ENABLE KEYS */;
 
 --
@@ -617,4 +617,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-25 18:56:54
+-- Dump completed on 2018-09-25 19:19:58
